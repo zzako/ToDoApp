@@ -1,0 +1,36 @@
+<template> 
+    <lightning-card title="To-Do">   
+    <lightning-layout class="slds-grid_vertical" multiple-rows>
+        <lightning-layout-item class="slds-align_absolute-center" size="12"> 
+            <div class="first">       
+            {greet}  
+            </div>           
+        </lightning-layout-item> 
+        <lightning-layout-item class="slds-p-top_small slds-align_absolute-center" size="12">
+            <div class="second">
+            {add} 
+            </div>
+        </lightning-layout-item>     
+    </lightning-layout>
+
+     <lightning-layout class="slds-grid slds-p-top_large inp slds-align_absolute-center">       
+        <lightning-layout-item  size="9" class="slds-col">           
+            <lightning-input onchange={changeHandler} label="Type something" placeholder="Type here" variant="label-hidden"></lightning-input>            
+        </lightning-layout-item>   
+        <lightning-layout-item  size="1" class="slds-col">
+            <lightning-button onclick={clickHandler} icon-name="utility:add"></lightning-button>
+        </lightning-layout-item>     
+     </lightning-layout>
+
+     <lightning-layout class="slds-align_absolute-center slds-p-top_large loop values">
+        <lightning-layout-item>                        
+            <template for:each={items} for:item="item">
+                <p key={item} style="display: block; font-weight: 300;"> 
+                    {item}  
+                    <lightning-button icon-name="utility:delete" style="size:small;" onclick={deleteItem} data-value={item}></lightning-button> 
+                </p>                                         
+            </template>  
+        </lightning-layout-item>                        
+     </lightning-layout>
+    </lightning-card> 
+</template>

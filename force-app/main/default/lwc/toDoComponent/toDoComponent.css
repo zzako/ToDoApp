@@ -1,0 +1,18 @@
+.first{
+    font-size:5rem;
+    font-weight: 350;
+}
+.second{
+    font-size:1rem;
+    font-weight: 330;
+}
+.loop{
+    font-size:1rem;
+    font-weight: 330;
+}
+.values{
+    overflow-y: scroll;
+}
+.inp{
+    width: 200px;
+}
